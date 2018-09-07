@@ -27,6 +27,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataHolder> {
     {
         mPlayers = players;
     }
+    public String getResult(String playerName)
+    {
+        for(int i = 0 ; i < mPlayers.size(); i++)
+        {
+            if(mPlayers.get(i).playerName.equalsIgnoreCase(playerName))return playerName;
+        }
+        return "Player Not Found";
+    }
     @Override
     public DataHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.model_player,parent, false);

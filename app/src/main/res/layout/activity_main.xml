@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <TextView
+        android:id="@+id/heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Players"
@@ -14,10 +14,63 @@
         android:textAlignment="center"
         android:textAllCaps="true"
         />
+    <LinearLayout
+        android:id="@+id/ll_search_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:layout_marginTop="60dp"
+        android:background="#0dd8c4"
+        android:orientation="horizontal"
+        >
+    <TextView
+        android:id="@+id/txt_search_result"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textSize="24sp"
+        android:textColor="#ff2600"
+        android:layout_height="wrap_content" />
+       <ImageView
+            android:id="@+id/img_search_cancel"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="40dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+    android:id="@+id/ll_search"
+        android:layout_below="@+id/heading"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/edit_search"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:hint="Search Player by Name"
+        />
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+
+        />
+</LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:id="@+id/rv_players"
+        android:layout_below="@+id/ll_search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
      />
